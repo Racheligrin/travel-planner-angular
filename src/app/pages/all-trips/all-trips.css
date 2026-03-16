@@ -1,0 +1,140 @@
+.page { direction: rtl; }
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h2 { font-size: 1.8rem; color: #333; margin: 0; }
+
+.filters {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filters input, .filters select {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.form-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+
+.form-card h3 { margin: 0 0 1rem; color: #444; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.form-grid input, .form-grid textarea {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.form-grid textarea { grid-column: 1 / -1; resize: vertical; min-height: 80px; }
+
+.form-actions { display: flex; gap: 0.8rem; margin-top: 1rem; }
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.trip-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.trip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.trip-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.trip-info { padding: 1rem; }
+
+.trip-info h3 { margin: 0 0 0.4rem; color: #333; font-size: 1.1rem; }
+
+.destination { color: #666; margin: 0 0 0.3rem; font-size: 0.9rem; }
+
+.price { color: #667eea; font-weight: 700; font-size: 1.1rem; margin: 0; }
+
+.trip-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid #f0f0f0;
+  flex-wrap: wrap;
+}
+
+.btn-view, .btn-edit, .btn-delete, .btn-add, .btn-primary, .btn-secondary {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.btn-view { background: #667eea; color: white; }
+.btn-edit { background: #f6ad55; color: white; }
+.btn-delete { background: #fc8181; color: white; }
+.btn-add { background: #48bb78; color: white; font-size: 0.95rem; padding: 0.6rem 1.2rem; }
+.btn-primary { background: #667eea; color: white; }
+.btn-secondary { background: #e2e8f0; color: #555; }
+
+button:hover { opacity: 0.85; }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.confirm-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.confirm-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.confirm-box p { margin: 0; font-weight: 600; color: #333; }
+
+.empty { text-align: center; color: #999; font-size: 1.1rem; margin-top: 3rem; }

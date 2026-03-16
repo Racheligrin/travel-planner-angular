@@ -1,0 +1,38 @@
+@if (trip) {
+<div class="page" dir="rtl">
+  <button class="btn-back" (click)="goBack()">← חזרה</button>
+
+  <div class="detail-card">
+    <img [src]="trip.image" [alt]="trip.name" class="hero-img" />
+    <div class="detail-body">
+      <h1>{{ trip.name }}</h1>
+      <div class="meta">
+        <span>📍 {{ trip.destination }}</span>
+        <span>📅 {{ trip.date }}</span>
+        <span>💰 ₪{{ trip.price }}</span>
+        <span>👥 {{ totalRegistered }} רשומים</span>
+      </div>
+      <p class="description">{{ trip.description }}</p>
+
+      <div class="booking-section">
+        @if (successMsg) {
+        <div class="success-msg">{{ successMsg }}</div>
+        }
+
+        @if (!alreadyBooked) {
+          <div class="register-form">
+            <label>מספר אנשים:</label>
+            <input type="number" [(ngModel)]="numPeople" min="1" />
+            <button class="btn-primary" (click)="register()">הירשם לטיול</button>
+          </div>
+        } @else {
+          <div class="already-booked">
+            <p>✅ משתמש רשום כבר לטיול</p>
+            <button class="btn-cancel" (click)="cancelBooking()">בטל הרשמה</button>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+}

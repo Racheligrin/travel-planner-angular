@@ -1,0 +1,96 @@
+<div class="page" dir="rtl">
+  <div class="page-header">
+    <h2>כל הטיולים</h2>
+    @if (auth.currentUser()?.isAdmin) {
+    <button class="btn-add" (click)="showAddForm = !showAddForm">
+      + הוסף טיול
+    </button>
+    }
+  </div>
+
+  <!-- Add Form -->
+  @if (showAddForm) {
+  <div class="form-card">
+    <h3>טיול חדש</h3>
+    <div class="form-grid">
+      <input placeholder="שם הטיול" [(ngModel)]="newTrip.name" />
+      <input placeholder="יעד" [(ngModel)]="newTrip.destination" />
+      <input type="date" [(ngModel)]="newTrip.date" />
+      <input type="number" placeholder="מחיר" [(ngModel)]="newTrip.price" />
+      <input placeholder="קישור לתמונה" [(ngModel)]="newTrip.image" />
+      <textarea placeholder="תיאור" [(ngModel)]="newTrip.description"></textarea>
+    </div>
+    <div class="form-actions">
+      <button class="btn-primary" (click)="addTrip()">שמור</button>
+      <button class="btn-secondary" (click)="showAddForm = false">ביטול</button>
+    </div>
+  </div>
+  }
+
+  <!-- Filters -->
+  <div class="filters">
+    <input placeholder="סנן לפי יעד" [(ngModel)]="filterDestination" (ngModelChange)="applyFilter()" />
+    <input type="date" [(ngModel)]="filterDate" (ngModelChange)="applyFilter()" />
+    <input type="number" placeholder="מחיר מקסימלי" [(ngModel)]="filterMaxPrice" (ngModelChange)="applyFilter()" />
+    <select [(ngModel)]="sortBy" (ngModelChange)="applyFilter()">
+      <option value="">מיון</option>
+      <option value="date">לפי תאריך</option>
+      <option value="price">לפי מחיר</option>
+    </select>
+  </div>
+
+  <!-- Edit Form -->
+  @if (editingTrip) {
+  <div class="form-card">
+    <h3>עריכת טיול</h3>
+    <div class="form-grid">
+      <input placeholder="שם הטיול" [(ngModel)]="editingTrip.name" />
+      <input placeholder="יעד" [(ngModel)]="editingTrip.destination" />
+      <input type="date" [(ngModel)]="editingTrip.date" />
+      <input type="number" placeholder="מחיר" [(ngModel)]="editingTrip.price" />
+      <input placeholder="קישור לתמונה" [(ngModel)]="editingTrip.image" />
+      <textarea placeholder="תיאור" [(ngModel)]="editingTrip.description"></textarea>
+    </div>
+    <div class="form-actions">
+      <button class="btn-primary" (click)="saveEdit()">שמור שינויים</button>
+      <button class="btn-secondary" (click)="cancelEdit()">ביטול</button>
+    </div>
+  </div>
+  }
+
+  <!-- Trips Grid -->
+  <div class="trips-grid">
+    @for (trip of filteredTrips; track trip.id) {
+    <div class="trip-card">
+      <img [src]="trip.image" [alt]="trip.name" />
+      <div class="trip-info">
+        <h3>{{ trip.name }}</h3>
+        <p class="destination">📍 {{ trip.destination }}</p>
+        <p class="price">₪{{ trip.price }}</p>
+      </div>
+      <div class="trip-actions">
+        <button class="btn-view" (click)="viewTrip(trip.id)">צפה בטיול</button>
+        @if (auth.currentUser()?.isAdmin) {
+          <button class="btn-edit" (click)="startEdit(trip)" [disabled]="hasBookings(trip.id)">עריכה</button>
+          <button class="btn-delete" (click)="confirmDelete(trip.id)" [disabled]="hasBookings(trip.id)">מחיקה</button>
+        }
+      </div>
+
+      <!-- Confirm Delete -->
+      @if (confirmDeleteId === trip.id) {
+      <div class="confirm-overlay">
+        <div class="confirm-box">
+          <p>האם אתה בטוח שברצונך למחוק את הטיול?</p>
+          <button class="btn-primary" (click)="deleteTrip(trip.id)">אישור</button>
+          <button class="btn-secondary" (click)="cancelDelete()">ביטול</button>
+        </div>
+      </div>
+      }
+    </div>
+    }
+  </div>
+
+  @if (filteredTrips.length === 0) {
+  <p class="empty">לא נמצאו טיולים</p>
+  }
+</div>

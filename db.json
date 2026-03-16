@@ -1,0 +1,128 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "admin",
+      "password": "admin123",
+      "fullName": "מנהל המערכת",
+      "isAdmin": true
+    },
+    {
+      "id": "2",
+      "name": "yossi",
+      "password": "1234",
+      "fullName": "יוסי כהן",
+      "isAdmin": false
+    },
+    {
+      "id": "3",
+      "name": "dana",
+      "password": "1234",
+      "fullName": "דנה לוי",
+      "isAdmin": false
+    },
+    {
+      "id": "4",
+      "name": "moshe",
+      "password": "1234",
+      "fullName": "משה ישראלי",
+      "isAdmin": false
+    },
+    {
+      "id": "5520",
+      "name": "גרינשטיין",
+      "password": "9876",
+      "fullName": "רחל",
+      "isAdmin": false
+    }
+  ],
+  "trips": [
+    {
+      "id": "1",
+      "name": "טיול לאיטליה",
+      "destination": "רומא, איטליה",
+      "date": "2025-08-15",
+      "price": 3500,
+      "description": "טיול מרתק לרומא הנצחית, כולל ביקור בקולוסיאום, הוותיקן ופונטנה די טרווי.",
+      "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400"
+    },
+    {
+      "id": "2",
+      "name": "טיול לפריז",
+      "destination": "פריז, צרפת",
+      "date": "2025-09-10",
+      "price": 4200,
+      "description": "עיר האורות מחכה לכם! ביקור במגדל אייפל, מוזיאון הלובר וטיול לאורך נהר הסן.",
+      "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400"
+    },
+    {
+      "id": "3",
+      "name": "טיול לברצלונה",
+      "destination": "ברצלונה, ספרד",
+      "date": "2025-10-05",
+      "price": 3800,
+      "description": "ברצלונה הססגונית עם אדריכלות גאודי, חופי ים מדהימים ואוכל ים תיכוני.",
+      "image": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=400"
+    },
+    {
+      "id": "4",
+      "name": "טיול לאמסטרדם",
+      "destination": "אמסטרדם, הולנד",
+      "date": "2025-11-20",
+      "price": 3200,
+      "description": "עיר התעלות הקסומה עם מוזיאון אן פרנק, שדות הצבעונים ואווירה ייחודית.",
+      "image": "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=400"
+    },
+    {
+      "id": "5",
+      "name": "טיול ליוון",
+      "destination": "אתונה, יוון",
+      "date": "2025-07-01",
+      "price": 3100,
+      "description": "עריסת הציוויליזציה המערבית. ביקור באקרופוליס, הפרתנון ואיי יוון.",
+      "image": "https://images.unsplash.com/photo-1555993539-1732b0258235?w=400"
+    },
+    {
+      "id": "b27b",
+      "name": "טיול לאוקראינה",
+      "destination": "אומן, אוקראינה",
+      "date": "2026-04-30",
+      "price": 1500,
+      "description": "טיול לקברו של הצדיק רבי נחמן מברסלב",
+      "image": "https://tmunativ.co.il/wp-content/uploads/2020/07/120003-3.webp"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "2",
+      "userId": "3",
+      "tripId": "2",
+      "numPeople": 1
+    },
+    {
+      "id": "fa98",
+      "userId": "2",
+      "tripId": "3",
+      "numPeople": 1
+    },
+    {
+      "id": "d932",
+      "userId": "4",
+      "tripId": "3",
+      "numPeople": 1
+    },
+    {
+      "id": "b741",
+      "userId": "5520",
+      "tripId": "4",
+      "numPeople": 3
+    },
+    {
+      "id": "e803",
+      "userId": "5520",
+      "tripId": "b27b",
+      "numPeople": 1
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

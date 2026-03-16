@@ -1,0 +1,125 @@
+.page { direction: rtl; max-width: 800px; margin: 0 auto; }
+
+.btn-back {
+  background: none;
+  border: none;
+  color: #667eea;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.detail-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.hero-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.detail-body { padding: 2rem; }
+
+.detail-body h1 { margin: 0 0 1rem; color: #333; font-size: 2rem; }
+
+.meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+.meta span {
+  background: #f0f2f5;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+}
+
+.description {
+  color: #555;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.booking-section {
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+}
+
+.register-form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.register-form label { font-weight: 600; color: #444; }
+
+.register-form input {
+  width: 80px;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.btn-primary {
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover { opacity: 0.9; }
+
+.btn-cancel {
+  padding: 0.7rem 1.5rem;
+  background: #fc8181;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-cancel:hover { opacity: 0.9; }
+
+.already-booked {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.already-booked p {
+  margin: 0;
+  color: #48bb78;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.success-msg {
+  background: #f0fff4;
+  border: 1px solid #9ae6b4;
+  color: #276749;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
