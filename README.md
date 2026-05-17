@@ -1,59 +1,38 @@
-# TripPlanner
+# Trip Planner System 🌍✈️
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.
+A comprehensive Travel & Tourism planning web application built with **Angular**. The system allows users to explore destinations, register for trips, and manage bookings, while providing an Admin Dashboard for managing trip inventories.
 
-## Development server
+---
 
-To start a local development server, run:
+### 🖼️ UI Preview
+![Application Preview](./travel-app.png)
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Key Features
 
-## Code scaffolding
+### 👤 User Capabilities
+* **Authentication Flow:** Complete Login and Registration forms.
+* **Trip Explorer:** Browse all available trips with destination names, locations, and images.
+* **Dynamic Booking System:** Register for specific trips with a customizable number of participants.
+* **Personal Dashboard ("My Trips"):** View and manage booked trips with a "Cancel Registration" option.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 🔐 Admin Capabilities
+* **Inventory Management:** Full CRUD operations (Create, Read, Update, Delete) for trips.
+* **Data Integrity Protections:** Deletion and editing are permitted only for trips without active registrants.
 
-```bash
-ng generate component component-name
-```
+## 🛠️ Tech Stack
+* **Frontend:** Angular (Components, Services, and Router)
+* **Backend Emulation:** REST API simulated via **JSON Server**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 📦 How to Run the Project (Installation & Local Setup)
 
-## Building
+To run this project locally, you need to start both the mock backend server and the Angular frontend application. Follow these steps:
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Step 1: Start the Mock Backend (JSON Server)
+1. Open your terminal/command prompt.
+2. If you don't have json-server installed globally, install it by running:
+   ```bash
+   npm install -g json-server
